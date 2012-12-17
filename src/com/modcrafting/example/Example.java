@@ -23,17 +23,17 @@ public class Example extends JavaPlugin{
         	mi = new VPreClass(this);
         }else{
         	//Disables the plugin if quiry things happen.
-			this.setEnabled(false);
+		this.setEnabled(false);
         }
         
         //OR Using Reflection;
-        try {
-        	String classname = null;
-        	if(version.contains("craftbukkit")){
-        		classname = this.getClass().getPackage().getName()+".VPreClass";
-        	}else{
-        		classname = this.getClass().getPackage().getName()+".V"+version.substring(1)+"Class";
-        	}
+        	try {
+        		String classname = null;
+        		if(version.contains("craftbukkit")){
+        			classname = this.getClass().getPackage().getName()+".VPreClass";
+        		}else{
+        			classname = this.getClass().getPackage().getName()+".V"+version.substring(1)+"Class";
+        		}
 			Class<?> clazz = Class.forName(classname);
 			Constructor<?> cons = clazz.getDeclaredConstructor(this.getClass());
 			Object obj = cons.newInstance(this);
@@ -43,5 +43,6 @@ public class Example extends JavaPlugin{
 		} catch (Exception e) {
 			this.setEnabled(false);
 		}
+	
 	}
 }
