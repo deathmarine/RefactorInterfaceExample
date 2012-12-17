@@ -8,23 +8,23 @@ public class Example extends JavaPlugin{
 	@Override
 	public void onEnable(){
 		String p = this.getServer().getClass().getPackage().getName();
-        String version = p.substring(p.lastIndexOf('.') + 1);
-        if (version.equals("v1_5")){
+       		String version = p.substring(p.lastIndexOf('.') + 1);
+      		if (version.equals("v1_5")){
         	//Sets the interface for 1.5 version of the class
-        	mi = new V1_5Class(this);
-        }else if (version.equals("v1_4_6")){
+        		mi = new V1_5Class(this);
+        	}else if (version.equals("v1_4_6")){
         	//Sets the interface for 1.4.6 version of the class
-        	mi = new V1_4_6Class(this);
-        }else if (version.equals("v1_4_5")){
+        		mi = new V1_4_6Class(this);
+        	}else if (version.equals("v1_4_5")){
         	//Sets the interface for 1.4.5 version of the class
-        	mi = new V1_4_5Class(this);
-        }else if (version.equals("craftbukkit")){
-        	//Sets the interface for original version of the class
-        	mi = new VPreClass(this);
-        }else{
+        		mi = new V1_4_5Class(this);
+        	}else if (version.equals("craftbukkit")){
+        		//Sets the interface for original version of the class
+        		mi = new VPreClass(this);
+        	}else{
         	//Disables the plugin if quiry things happen.
-		this.setEnabled(false);
-        }
+			this.setEnabled(false);
+       		}
         
         //OR Using Reflection;
         	try {
